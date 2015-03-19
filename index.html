@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Test Html</title>
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="showJsonTree.js" charset="utf-8"></script>
+</head>
+	<body>
+		<div id="treeDiv"></div>	
+		<script type="text/javascript">
+			var data = {"result":"ccc","counts":{"input":1660280,"emit":1660280,"reduce":16605,"output":1},"timeMillis":33136,"timing":{"shardProcessing":33119,"postProcessing":16},"shardCounts":{"rs0/192.168.1.4:27017,192.168.1.5:27017,mongod-1.novalocal:27017":{"input":[817905,3,1,2],"emit":817905,"reduce":8180,"output":1},"rs1/192.168.1.6:27017,192.168.1.9:27017,mongod-4.novalocal:27017":{"input":842375,"emit":842375,"reduce":8424,"output":1}},"postProcessCounts":{"rs0/192.168.1.4:27017,192.168.1.5:27017,mongod-1.novalocal:27017":{"input":2,"reduce":1,"output":1}},"ok":1}
+
+			document.getElementById('treeDiv').innerHTML = showJsonTree(data);
+		</script>
+
+	</body>
+</html>

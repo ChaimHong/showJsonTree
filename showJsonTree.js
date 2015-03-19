@@ -1,26 +1,26 @@
 function showJsonTree() {
-			var indent = "++"
-			var lines = [];
+	var indent = "&nbsp;&nbsp;"
+	var lines = [];
 
-			var node = function(prefix, key, value) {
-				console.log(prefix, key, value,value.constructor);
-				if( value && value.constructor == Array ) {
-					lines.push( prefix+key );		
+	var node = function(prefix, key, value) {
+		console.log(prefix, key, value,value.constructor);
+		if( value && value.constructor == Array ) {
+			lines.push( prefix+key );		
 
-					for (var i=0; i < value.length; i++)
-						node(prefix+indent, i, value[i]);
+			for (var i=0; i < value.length; i++)
+				node(prefix+indent, i, value[i]);
 
-				}else if( value && typeof value == 'object' ) {
-					lines.push(prefix + key + ":");
+		}else if( value && typeof value == 'object' ) {
+			lines.push(prefix + key + ":");
 
-					for(var key in value) node(prefix + indent, key, value[key]);
+			for(var key in value) node(prefix + indent, key, value[key]);
 
-				}else{
-					lines.push(prefix + key + ":" + value);
-				};
-			};
+		}else{
+			lines.push(prefix + key + ":" + value);
+		};
+	};
 
-			if( typeof data == 'object' ) node('', '', data);
+	if( typeof data == 'object' ) node('', '测试树', data);
 
-			return lines.join("<br />");
+	return lines.join("<br />");
 };
